@@ -5,43 +5,30 @@
 #include <imgui_impl_glfw.h>
 #include <imgui_impl_opengl3.h>
 
+
+#include <window.h>
+#include <imGuiSetup.h>
+
+
 int main() {
     if (!glfwInit()) {
         std::cerr << "Failed to init GLFW\n";
         return -1;
     }
 
-    GLFWwindow* window = glfwCreateWindow(800, 600, "OpenGL Test", nullptr, nullptr);
-    if (!window) {
-        std::cerr << "Failed to create window\n";
-        glfwTerminate();
-        return -1;
-    }
+    GLFWwindow* window = window::init("Hello, ImGui!", 800, 600);
 
-    glfwMakeContextCurrent(window);
     glewInit();
 
     // Initialize ImGui
-    ImGui::CreateContext();
-    ImGuiIO& io = ImGui::GetIO(); (void)io;
-
-    // Setup Dear ImGui style
-    ImGui::StyleColorsDark();
-
-    // Setup Platform/Renderer bindings
-    ImGui_ImplGlfw_InitForOpenGL(window, true);
-    ImGui_ImplOpenGL3_Init("#version 130"); // Use your OpenGL version (e.g., #version 130)
+    imguiSetup::setup(window);
 
     while (!glfwWindowShouldClose(window)) {
         glfwPollEvents();
 
         // Start the ImGui frame
-        ImGui_ImplOpenGL3_NewFrame();
-        ImGui_ImplGlfw_NewFrame();
-        ImGui::NewFrame();
+        imguiSetup::start("Hello, ImGui!");
 
-        // Render ImGui UI
-        ImGui::Begin("Hello, ImGui!"); // Create a simple ImGui window
         ImGui::Text("This is an example window!");
         if (ImGui::Button("Close")) {
             glfwSetWindowShouldClose(window, GLFW_TRUE);
@@ -53,8 +40,7 @@ int main() {
         glClear(GL_COLOR_BUFFER_BIT);
 
         // Render ImGui
-        ImGui::Render();
-        ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
+        imguiSetup::render();
 
         // Swap buffers
         glfwSwapBuffers(window);
@@ -65,7 +51,6 @@ int main() {
     ImGui_ImplGlfw_Shutdown();
     ImGui::DestroyContext();
 
-    glfwDestroyWindow(window);
-    glfwTerminate();
+    window::shutdown(window);
     return 0;
 }

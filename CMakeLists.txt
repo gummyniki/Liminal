@@ -14,7 +14,6 @@ file(GLOB_RECURSE SRC_FILES src/*.cpp)
 set(IMGUI_DIR "third_party/imgui")
 set(IMGUI_BACKEND_DIR "${IMGUI_DIR}/backends")
 
-# Manually include only required ImGui source files
 set(IMGUI_SOURCES
     ${IMGUI_DIR}/imgui.cpp
     ${IMGUI_DIR}/imgui_demo.cpp
@@ -36,9 +35,20 @@ add_executable(${PROJECT_NAME} ${SRC_FILES})
 # Dependencies
 # --------------------------
 find_package(OpenGL REQUIRED)
-find_package(PkgConfig REQUIRED)
-pkg_check_modules(GLFW REQUIRED glfw3)
-pkg_check_modules(GLEW REQUIRED glew)
+
+if(WIN32)
+    find_package(PkgConfig REQUIRED)
+    pkg_check_modules(GLFW REQUIRED glfw3)
+    pkg_check_modules(GLEW REQUIRED glew)
+elseif(APPLE)
+    find_package(PkgConfig REQUIRED)
+    pkg_check_modules(GLFW REQUIRED glfw3)
+    pkg_check_modules(GLEW REQUIRED glew)
+else()  # Assume Linux
+    find_package(PkgConfig REQUIRED)
+    pkg_check_modules(GLFW REQUIRED glfw3)
+    pkg_check_modules(GLEW REQUIRED glew)
+endif()
 
 # --------------------------
 # Include directories
@@ -48,6 +58,7 @@ target_include_directories(${PROJECT_NAME} PRIVATE
     ${GLEW_INCLUDE_DIRS}
     ${IMGUI_DIR}
     ${IMGUI_BACKEND_DIR}
+    ${CMAKE_SOURCE_DIR}/headers
 )
 
 # --------------------------
@@ -57,7 +68,9 @@ target_link_libraries(${PROJECT_NAME}
     ${GLFW_LIBRARIES}
     ${GLEW_LIBRARIES}
     OpenGL::GL
-    dl
-    pthread
-    X11
 )
+
+if(UNIX AND NOT APPLE)
+    # Linux-specific libraries
+    target_link_libraries(${PROJECT_NAME} dl pthread X11)
+endif()

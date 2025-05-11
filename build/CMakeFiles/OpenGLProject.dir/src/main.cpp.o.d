@@ -148,4 +148,12 @@ CMakeFiles/OpenGLProject.dir/src/main.cpp.o: \
  /usr/include/c++/15.1.1/bits/locale_facets.tcc \
  /usr/include/c++/15.1.1/bits/basic_ios.tcc \
  /usr/include/c++/15.1.1/bits/ostream.tcc /usr/include/c++/15.1.1/istream \
- /usr/include/c++/15.1.1/bits/istream.tcc
+ /usr/include/c++/15.1.1/bits/istream.tcc \
+ /home/gummy/Documents/opengl_VScode/third_party/imgui/imgui.h \
+ /home/gummy/Documents/opengl_VScode/third_party/imgui/imconfig.h \
+ /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/float.h \
+ /usr/include/string.h /usr/include/strings.h /usr/include/assert.h \
+ /home/gummy/Documents/opengl_VScode/third_party/imgui/backends/imgui_impl_glfw.h \
+ /home/gummy/Documents/opengl_VScode/third_party/imgui/backends/imgui_impl_opengl3.h \
+ /home/gummy/Documents/opengl_VScode/headers/window.h \
+ /home/gummy/Documents/opengl_VScode/headers/imGuiSetup.h

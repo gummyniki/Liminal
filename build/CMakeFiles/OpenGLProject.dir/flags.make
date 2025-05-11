@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = 
 
-CXX_INCLUDES = 
+CXX_INCLUDES = -I/home/gummy/Documents/opengl_VScode/third_party/imgui -I/home/gummy/Documents/opengl_VScode/third_party/imgui/backends -I/home/gummy/Documents/opengl_VScode/headers
 
 CXX_FLAGS = -std=gnu++17
 

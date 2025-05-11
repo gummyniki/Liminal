@@ -2,7 +2,16 @@ OpenGLProject: \
   /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../../../lib/Scrt1.o \
   /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../../../lib/crti.o \
   /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/crtbeginS.o \
+  CMakeFiles/OpenGLProject.dir/src/imGuiSetup.cpp.o \
   CMakeFiles/OpenGLProject.dir/src/main.cpp.o \
+  CMakeFiles/OpenGLProject.dir/src/window.cpp.o \
+  CMakeFiles/OpenGLProject.dir/third_party/imgui/imgui.cpp.o \
+  CMakeFiles/OpenGLProject.dir/third_party/imgui/imgui_demo.cpp.o \
+  CMakeFiles/OpenGLProject.dir/third_party/imgui/imgui_draw.cpp.o \
+  CMakeFiles/OpenGLProject.dir/third_party/imgui/imgui_tables.cpp.o \
+  CMakeFiles/OpenGLProject.dir/third_party/imgui/imgui_widgets.cpp.o \
+  CMakeFiles/OpenGLProject.dir/third_party/imgui/backends/imgui_impl_glfw.cpp.o \
+  CMakeFiles/OpenGLProject.dir/third_party/imgui/backends/imgui_impl_opengl3.cpp.o \
   /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../../../lib/libglfw.so \
   /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../../../lib/libGLEW.so \
   /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../../../lib/libEGL.so \
@@ -52,7 +61,25 @@ OpenGLProject: \
 
 /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/crtbeginS.o:
 
+CMakeFiles/OpenGLProject.dir/src/imGuiSetup.cpp.o:
+
 CMakeFiles/OpenGLProject.dir/src/main.cpp.o:
+
+CMakeFiles/OpenGLProject.dir/src/window.cpp.o:
+
+CMakeFiles/OpenGLProject.dir/third_party/imgui/imgui.cpp.o:
+
+CMakeFiles/OpenGLProject.dir/third_party/imgui/imgui_demo.cpp.o:
+
+CMakeFiles/OpenGLProject.dir/third_party/imgui/imgui_draw.cpp.o:
+
+CMakeFiles/OpenGLProject.dir/third_party/imgui/imgui_tables.cpp.o:
+
+CMakeFiles/OpenGLProject.dir/third_party/imgui/imgui_widgets.cpp.o:
+
+CMakeFiles/OpenGLProject.dir/third_party/imgui/backends/imgui_impl_glfw.cpp.o:
+
+CMakeFiles/OpenGLProject.dir/third_party/imgui/backends/imgui_impl_opengl3.cpp.o:
 
 /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../../../lib/libglfw.so:
 
