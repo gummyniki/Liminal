@@ -18,3 +18,15 @@
 *.dll
 *.lib
 *.a
+
+# Backup and temp files
+*~
+*.swp
+*.tmp
+
+
+# macOS-specific (if relevant)
+.DS_Store
+
+# Linux core dumps
+core
