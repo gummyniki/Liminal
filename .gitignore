@@ -14,6 +14,7 @@
 # Visual Studio Code settings (optional)
 .vscode/
 
+
 # Backup and temp files
 *~
 *.swp
