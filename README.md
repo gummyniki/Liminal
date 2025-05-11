@@ -31,10 +31,8 @@ Use a package manager like vcpkg or manually install:
 ## Building the project
 
 ```bash
-git clone https://github.com/yourusername/opengl-imgui-project.git
-cd opengl-imgui-project
-cmake -B build
-cmake --build build
-./build/OpenGLProject
+chmod +x build.sh
+./build.sh
+
 ```
 
