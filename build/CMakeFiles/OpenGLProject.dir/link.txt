@@ -1,0 +1,1 @@
+/usr/bin/c++ -Wl,--dependency-file=CMakeFiles/OpenGLProject.dir/link.d CMakeFiles/OpenGLProject.dir/src/main.cpp.o -o OpenGLProject  -lglfw -lGLEW -lEGL -lGL -lGLU -lOpenGL /usr/lib/libGL.so -ldl -lpthread -lX11

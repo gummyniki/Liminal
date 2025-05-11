@@ -1,0 +1,3 @@
+/home/gummy/Documents/opengl_VScode/build/CMakeFiles/OpenGLProject.dir
+/home/gummy/Documents/opengl_VScode/build/CMakeFiles/edit_cache.dir
+/home/gummy/Documents/opengl_VScode/build/CMakeFiles/rebuild_cache.dir
