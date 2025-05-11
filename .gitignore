@@ -14,11 +14,6 @@
 # Visual Studio Code settings (optional)
 .vscode/
 
-# ImGui binaries or built files (just in case)
-*.dll
-*.lib
-*.a
-
 # Backup and temp files
 *~
 *.swp
