@@ -3,7 +3,7 @@
 #ifndef MESH_H
 #define MESH_H
 
-#include <glad/gl.h> // holds all OpenGL type declarations
+#include <glad/gl.h> 
 
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>

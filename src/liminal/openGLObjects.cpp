@@ -37,4 +37,4 @@ GLuint createEBO(unsigned int indices[], size_t size) {
   return EBO;
 }
 
-} // namespace OpenGLObjects
+} 

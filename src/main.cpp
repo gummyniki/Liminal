@@ -81,7 +81,6 @@ int main() {
   model2.scale = glm::vec3(0.05f);
 
 
-  // Initialize ImGui
   imguiSetup::setup(liminal::gameWindow);
 
 
@@ -92,10 +91,9 @@ int main() {
 
     liminal::processInput(liminal::gameWindow);
 
-    // Clear your framebuffer (do it after bind)
+
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-    // Start ImGui frame
     imguiSetup::start("Hello, ImGui!");
     ImGui::Checkbox("postprocessing", &liminal::postProcessingEnabled);
     ImGui::Text("This is an example window!");
@@ -104,7 +102,6 @@ int main() {
     }
     ImGui::End();
 
-    // Render your 3D scene here
     liminal::prepRendering(liminal::shaderProgram, VAO);
     liminal::setupLights();
 
@@ -118,25 +115,21 @@ int main() {
 
     model2.Draw(liminal::shaderProgram);
 
-    // Unbind framebuffer (switch to default framebuffer, screen)
     glBindFramebuffer(GL_FRAMEBUFFER, 0);
-    glDisable(GL_DEPTH_TEST); // Disable depth test for screen quad / blit
+    glDisable(GL_DEPTH_TEST); 
 
-    // Reset viewport to window size
     int width, height;
     glfwGetFramebufferSize(liminal::gameWindow, &width, &height);
     glViewport(0, 0, width, height);
 
-    // Now choose whether to do postprocessing or blit
     if (liminal::postProcessingEnabled) {
-        liminal::render_postProcessing();  // draws fullscreen quad with shader
+        liminal::render_postProcessing();  
     } else {
-        liminal::blitFrameBuffer(); // blit framebuffer to default framebuffer
+        liminal::blitFrameBuffer(); 
     }
 
-    glEnable(GL_DEPTH_TEST); // Re-enable depth test for next frame
+    glEnable(GL_DEPTH_TEST); 
 
-    // Render ImGui on top (still on default framebuffer)
     imguiSetup::render();
 
     liminal::postRendering();

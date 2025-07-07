@@ -65,10 +65,10 @@ const char *readFile(const char *filename) {
 
   char *buffer = new char[length + 1];
   fread(buffer, 1, length, file);
-  buffer[length] = '\0'; // null terminate
+  buffer[length] = '\0';
   fclose(file);
 
   return buffer;
 }
 
-} // namespace shader
+} 

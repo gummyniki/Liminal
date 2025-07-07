@@ -7,4 +7,4 @@ namespace shader {
 GLuint createShader(SHADERTYPE shaderType, const char *source);
 GLuint createShaderProgram(GLuint vs, GLuint fs);
 const char *readFile(const char *filename);
-} // namespace shader
+} 

@@ -32,4 +32,4 @@ unsigned int loadTexture(const char *path) {
   return texture;
 }
 
-} // namespace texture
+}

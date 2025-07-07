@@ -22,9 +22,10 @@ build_project() {
 
 # Function to run the project
 run_project() {
-    if [[ -f "$BUILD_DIR/Liminal" ]]; then
+    if [[ -f "$BUILD_DIR/Liminal" || -f "$BUILD_DIR/Liminal.exe" ]]; then
         echo "Running the project..."
-        ./$BUILD_DIR/Liminal
+        ./$BUILD_DIR/Liminal || ./$BUILD_DIR/Liminal.exe
+
     else
         echo "Build failed or executable not found!"
     fi
