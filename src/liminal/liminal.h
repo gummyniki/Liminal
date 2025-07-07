@@ -64,6 +64,7 @@ namespace liminal {
     void setupLights();
 
     void setup_postProcessing();
+    void updatePostProcessing(const char* newShaderPath);
     void render_postProcessingQuad();
     void render_postProcessing();
     void blitFrameBuffer();

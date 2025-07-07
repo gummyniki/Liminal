@@ -212,6 +212,14 @@ void setup_postProcessing() {
     
 }
 
+
+void updatePostProcessing(const char* newShaderPath) {
+    postProcessingShaderProgram = shader::createShaderProgram(
+        shader::createShader(SHADERTYPE::VERTEX_SHADER, shader::readFile("shaders/screen_quad.vert")),
+        shader::createShader(SHADERTYPE::FRAGMENT_SHADER, shader::readFile(newShaderPath))
+    );
+}
+
 void render_postProcessingQuad() {
     
     float quadVertices[] = {

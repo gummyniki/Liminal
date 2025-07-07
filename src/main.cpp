@@ -11,6 +11,7 @@
 #include "liminal/camera.h"
 #include "liminal/model.h"
 #include <iostream>
+#include "liminal/postProcessing.h"
 
 Camera mainCamera(glm::vec3(0.0f, 0.0f, 3.0f));
 
@@ -29,6 +30,8 @@ int main() {
   
   liminal::setupShaders();
   GLuint VAO = OpenGLObjects::createVAO(cube::vertices, sizeof(cube::vertices));
+
+  
 
 
   liminal::PointLight pointLight1;
@@ -80,6 +83,12 @@ int main() {
   model2.position = glm::vec3(-0.8f, -0.5f, 0.0f);
   model2.scale = glm::vec3(0.05f);
 
+  postProcessing::PostProcessingEffect chromaticAberrationEffect;
+  chromaticAberrationEffect.shaderPath = "shaders/chromatic_abberation.frag";
+  chromaticAberrationEffect.type = postProcessing::CHROMATIC_ABERRATION;
+  chromaticAberrationEffect.offset = glm::vec2(0.5f, 0.5f);
+  chromaticAberrationEffect.offsetUniformName = "u_offset";
+
 
   imguiSetup::setup(liminal::gameWindow);
 
@@ -100,6 +109,15 @@ int main() {
     if (ImGui::Button("Close")) {
         glfwSetWindowShouldClose(liminal::gameWindow, GLFW_TRUE);
     }
+
+    chromaticAberrationEffect.updateEffect();
+
+    if (glfwGetKey(liminal::gameWindow, GLFW_KEY_C) == GLFW_PRESS) {
+        
+        chromaticAberrationEffect.applyEffect();
+        std::cout << "Applying Chromatic Aberration Effect" << std::endl;
+    }
+
     ImGui::End();
 
     liminal::prepRendering(liminal::shaderProgram, VAO);

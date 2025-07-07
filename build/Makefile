@@ -225,6 +225,30 @@ src/liminal/openGLObjects.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Liminal.dir/build.make CMakeFiles/Liminal.dir/src/liminal/openGLObjects.cpp.s
 .PHONY : src/liminal/openGLObjects.cpp.s
 
+src/liminal/postProcessing.o: src/liminal/postProcessing.cpp.o
+.PHONY : src/liminal/postProcessing.o
+
+# target to build an object file
+src/liminal/postProcessing.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Liminal.dir/build.make CMakeFiles/Liminal.dir/src/liminal/postProcessing.cpp.o
+.PHONY : src/liminal/postProcessing.cpp.o
+
+src/liminal/postProcessing.i: src/liminal/postProcessing.cpp.i
+.PHONY : src/liminal/postProcessing.i
+
+# target to preprocess a source file
+src/liminal/postProcessing.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Liminal.dir/build.make CMakeFiles/Liminal.dir/src/liminal/postProcessing.cpp.i
+.PHONY : src/liminal/postProcessing.cpp.i
+
+src/liminal/postProcessing.s: src/liminal/postProcessing.cpp.s
+.PHONY : src/liminal/postProcessing.s
+
+# target to generate assembly for a file
+src/liminal/postProcessing.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Liminal.dir/build.make CMakeFiles/Liminal.dir/src/liminal/postProcessing.cpp.s
+.PHONY : src/liminal/postProcessing.cpp.s
+
 src/liminal/shader.o: src/liminal/shader.cpp.o
 .PHONY : src/liminal/shader.o
 
@@ -510,6 +534,9 @@ help:
 	@echo "... src/liminal/openGLObjects.o"
 	@echo "... src/liminal/openGLObjects.i"
 	@echo "... src/liminal/openGLObjects.s"
+	@echo "... src/liminal/postProcessing.o"
+	@echo "... src/liminal/postProcessing.i"
+	@echo "... src/liminal/postProcessing.s"
 	@echo "... src/liminal/shader.o"
 	@echo "... src/liminal/shader.i"
 	@echo "... src/liminal/shader.s"
