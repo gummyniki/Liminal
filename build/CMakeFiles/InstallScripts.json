@@ -1,7 +1,7 @@
 {
 	"InstallScripts" : 
 	[
-		"/home/gummy/Documents/opengl_VScode/build/cmake_install.cmake"
+		"/home/gummy/projects/Liminal/build/cmake_install.cmake"
 	],
 	"Parallel" : false
 }

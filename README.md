@@ -1,40 +1,29 @@
-# OpenGL ImGui Project
+# Liminal
+Liminal is a super simple 3d renderer written using c++ and opengl.
 
-This is a simple OpenGL project using [GLFW](https://www.glfw.org/), [GLEW](http://glew.sourceforge.net/), and [Dear ImGui](https://github.com/ocornut/imgui) for GUI rendering. The goal is to provide a minimal, modular, and cross-platform base for OpenGL applications with ImGui support.
+---
 
-## Features
+## features
+* .obj loading
+* Postprocessing support (still being worked on)
+* basic lighting
+* camera system
 
-- OpenGL window with context created via GLFW
-- GLEW for loading OpenGL extensions
-- ImGui GUI rendered using OpenGL3 + GLFW backend
-- Modular structure (`window.cpp`, etc.)
-- CMake-based build system
+---
+  
 
-WARNING, currently git is being very annoying and the source files for imgui are not being pushed, so just go to the original imgui website, copy all of the source files and paste them in `third_party/imgui`
+## Building
+The engine is built using vscode, so you don't need to download Visual Studio or anything like that.
 
-## Prerequisites
+### Windows
+Run the **build.bat** file and it should automatically compile the project and run it
 
 ### Linux
+Run the **build.sh** file and it should compile and run the project
 
-Install dependencies (example for Arch Linux):
 
-```bash
-sudo pacman -S glfw glew cmake
-```
-### Windows
+---
 
-Use a package manager like vcpkg or manually install:
-+ GLEW
-+ GLFW
-+ OpenGL (usually comes with drivers)
 
-• make sure the dependencies are discoverable by CMake!
-  
-## Building the project
-
-```bash
-chmod +x build.sh
-./build.sh
-
-```
-
+### Contribute
+You can support the project by fixing any issues it might have, or adding features! Or if you find any issues, open an *Issue* on the github page and i'll get to fixing it!

@@ -22,9 +22,9 @@ build_project() {
 
 # Function to run the project
 run_project() {
-    if [[ -f "$BUILD_DIR/OpenGLProject" ]]; then
+    if [[ -f "$BUILD_DIR/Liminal" ]]; then
         echo "Running the project..."
-        ./$BUILD_DIR/OpenGLProject
+        ./$BUILD_DIR/Liminal
     else
         echo "Build failed or executable not found!"
     fi

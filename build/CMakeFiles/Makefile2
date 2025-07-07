@@ -54,20 +54,20 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/gummy/Documents/opengl_VScode
+CMAKE_SOURCE_DIR = /home/gummy/projects/Liminal
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/gummy/Documents/opengl_VScode/build
+CMAKE_BINARY_DIR = /home/gummy/projects/Liminal/build
 
 #=============================================================================
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/OpenGLProject.dir/all
+all: CMakeFiles/Liminal.dir/all
 .PHONY : all
 
 # The main recursive "codegen" target.
-codegen: CMakeFiles/OpenGLProject.dir/codegen
+codegen: CMakeFiles/Liminal.dir/codegen
 .PHONY : codegen
 
 # The main recursive "preinstall" target.
@@ -75,40 +75,40 @@ preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean: CMakeFiles/OpenGLProject.dir/clean
+clean: CMakeFiles/Liminal.dir/clean
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/OpenGLProject.dir
+# Target rules for target CMakeFiles/Liminal.dir
 
 # All Build rule for target.
-CMakeFiles/OpenGLProject.dir/all:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/OpenGLProject.dir/build.make CMakeFiles/OpenGLProject.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/OpenGLProject.dir/build.make CMakeFiles/OpenGLProject.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/gummy/Documents/opengl_VScode/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11 "Built target OpenGLProject"
-.PHONY : CMakeFiles/OpenGLProject.dir/all
+CMakeFiles/Liminal.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Liminal.dir/build.make CMakeFiles/Liminal.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Liminal.dir/build.make CMakeFiles/Liminal.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/gummy/projects/Liminal/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16 "Built target Liminal"
+.PHONY : CMakeFiles/Liminal.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/OpenGLProject.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/gummy/Documents/opengl_VScode/build/CMakeFiles 11
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/OpenGLProject.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/gummy/Documents/opengl_VScode/build/CMakeFiles 0
-.PHONY : CMakeFiles/OpenGLProject.dir/rule
+CMakeFiles/Liminal.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/gummy/projects/Liminal/build/CMakeFiles 16
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/Liminal.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/gummy/projects/Liminal/build/CMakeFiles 0
+.PHONY : CMakeFiles/Liminal.dir/rule
 
 # Convenience name for target.
-OpenGLProject: CMakeFiles/OpenGLProject.dir/rule
-.PHONY : OpenGLProject
+Liminal: CMakeFiles/Liminal.dir/rule
+.PHONY : Liminal
 
 # codegen rule for target.
-CMakeFiles/OpenGLProject.dir/codegen:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/OpenGLProject.dir/build.make CMakeFiles/OpenGLProject.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/gummy/Documents/opengl_VScode/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11 "Finished codegen for target OpenGLProject"
-.PHONY : CMakeFiles/OpenGLProject.dir/codegen
+CMakeFiles/Liminal.dir/codegen:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Liminal.dir/build.make CMakeFiles/Liminal.dir/codegen
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/gummy/projects/Liminal/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16 "Finished codegen for target Liminal"
+.PHONY : CMakeFiles/Liminal.dir/codegen
 
 # clean rule for target.
-CMakeFiles/OpenGLProject.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/OpenGLProject.dir/build.make CMakeFiles/OpenGLProject.dir/clean
-.PHONY : CMakeFiles/OpenGLProject.dir/clean
+CMakeFiles/Liminal.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Liminal.dir/build.make CMakeFiles/Liminal.dir/clean
+.PHONY : CMakeFiles/Liminal.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

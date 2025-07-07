@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/gummy/Documents/opengl_VScode
+CMAKE_SOURCE_DIR = /home/gummy/projects/Liminal
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/gummy/Documents/opengl_VScode/build
+CMAKE_BINARY_DIR = /home/gummy/projects/Liminal/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,9 +87,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/gummy/Documents/opengl_VScode/build/CMakeFiles /home/gummy/Documents/opengl_VScode/build//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/gummy/projects/Liminal/build/CMakeFiles /home/gummy/projects/Liminal/build//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/gummy/Documents/opengl_VScode/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/gummy/projects/Liminal/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -117,48 +117,192 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named OpenGLProject
+# Target rules for targets named Liminal
 
 # Build rule for target.
-OpenGLProject: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 OpenGLProject
-.PHONY : OpenGLProject
+Liminal: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Liminal
+.PHONY : Liminal
 
 # fast build rule for target.
-OpenGLProject/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/OpenGLProject.dir/build.make CMakeFiles/OpenGLProject.dir/build
-.PHONY : OpenGLProject/fast
+Liminal/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Liminal.dir/build.make CMakeFiles/Liminal.dir/build
+.PHONY : Liminal/fast
 
-src/imGuiSetup.o: src/imGuiSetup.cpp.o
-.PHONY : src/imGuiSetup.o
+src/gl.o: src/gl.c.o
+.PHONY : src/gl.o
 
 # target to build an object file
-src/imGuiSetup.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/OpenGLProject.dir/build.make CMakeFiles/OpenGLProject.dir/src/imGuiSetup.cpp.o
-.PHONY : src/imGuiSetup.cpp.o
+src/gl.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Liminal.dir/build.make CMakeFiles/Liminal.dir/src/gl.c.o
+.PHONY : src/gl.c.o
 
-src/imGuiSetup.i: src/imGuiSetup.cpp.i
-.PHONY : src/imGuiSetup.i
+src/gl.i: src/gl.c.i
+.PHONY : src/gl.i
 
 # target to preprocess a source file
-src/imGuiSetup.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/OpenGLProject.dir/build.make CMakeFiles/OpenGLProject.dir/src/imGuiSetup.cpp.i
-.PHONY : src/imGuiSetup.cpp.i
+src/gl.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Liminal.dir/build.make CMakeFiles/Liminal.dir/src/gl.c.i
+.PHONY : src/gl.c.i
 
-src/imGuiSetup.s: src/imGuiSetup.cpp.s
-.PHONY : src/imGuiSetup.s
+src/gl.s: src/gl.c.s
+.PHONY : src/gl.s
 
 # target to generate assembly for a file
-src/imGuiSetup.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/OpenGLProject.dir/build.make CMakeFiles/OpenGLProject.dir/src/imGuiSetup.cpp.s
-.PHONY : src/imGuiSetup.cpp.s
+src/gl.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Liminal.dir/build.make CMakeFiles/Liminal.dir/src/gl.c.s
+.PHONY : src/gl.c.s
+
+src/liminal/imGuiSetup.o: src/liminal/imGuiSetup.cpp.o
+.PHONY : src/liminal/imGuiSetup.o
+
+# target to build an object file
+src/liminal/imGuiSetup.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Liminal.dir/build.make CMakeFiles/Liminal.dir/src/liminal/imGuiSetup.cpp.o
+.PHONY : src/liminal/imGuiSetup.cpp.o
+
+src/liminal/imGuiSetup.i: src/liminal/imGuiSetup.cpp.i
+.PHONY : src/liminal/imGuiSetup.i
+
+# target to preprocess a source file
+src/liminal/imGuiSetup.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Liminal.dir/build.make CMakeFiles/Liminal.dir/src/liminal/imGuiSetup.cpp.i
+.PHONY : src/liminal/imGuiSetup.cpp.i
+
+src/liminal/imGuiSetup.s: src/liminal/imGuiSetup.cpp.s
+.PHONY : src/liminal/imGuiSetup.s
+
+# target to generate assembly for a file
+src/liminal/imGuiSetup.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Liminal.dir/build.make CMakeFiles/Liminal.dir/src/liminal/imGuiSetup.cpp.s
+.PHONY : src/liminal/imGuiSetup.cpp.s
+
+src/liminal/liminal.o: src/liminal/liminal.cpp.o
+.PHONY : src/liminal/liminal.o
+
+# target to build an object file
+src/liminal/liminal.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Liminal.dir/build.make CMakeFiles/Liminal.dir/src/liminal/liminal.cpp.o
+.PHONY : src/liminal/liminal.cpp.o
+
+src/liminal/liminal.i: src/liminal/liminal.cpp.i
+.PHONY : src/liminal/liminal.i
+
+# target to preprocess a source file
+src/liminal/liminal.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Liminal.dir/build.make CMakeFiles/Liminal.dir/src/liminal/liminal.cpp.i
+.PHONY : src/liminal/liminal.cpp.i
+
+src/liminal/liminal.s: src/liminal/liminal.cpp.s
+.PHONY : src/liminal/liminal.s
+
+# target to generate assembly for a file
+src/liminal/liminal.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Liminal.dir/build.make CMakeFiles/Liminal.dir/src/liminal/liminal.cpp.s
+.PHONY : src/liminal/liminal.cpp.s
+
+src/liminal/openGLObjects.o: src/liminal/openGLObjects.cpp.o
+.PHONY : src/liminal/openGLObjects.o
+
+# target to build an object file
+src/liminal/openGLObjects.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Liminal.dir/build.make CMakeFiles/Liminal.dir/src/liminal/openGLObjects.cpp.o
+.PHONY : src/liminal/openGLObjects.cpp.o
+
+src/liminal/openGLObjects.i: src/liminal/openGLObjects.cpp.i
+.PHONY : src/liminal/openGLObjects.i
+
+# target to preprocess a source file
+src/liminal/openGLObjects.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Liminal.dir/build.make CMakeFiles/Liminal.dir/src/liminal/openGLObjects.cpp.i
+.PHONY : src/liminal/openGLObjects.cpp.i
+
+src/liminal/openGLObjects.s: src/liminal/openGLObjects.cpp.s
+.PHONY : src/liminal/openGLObjects.s
+
+# target to generate assembly for a file
+src/liminal/openGLObjects.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Liminal.dir/build.make CMakeFiles/Liminal.dir/src/liminal/openGLObjects.cpp.s
+.PHONY : src/liminal/openGLObjects.cpp.s
+
+src/liminal/shader.o: src/liminal/shader.cpp.o
+.PHONY : src/liminal/shader.o
+
+# target to build an object file
+src/liminal/shader.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Liminal.dir/build.make CMakeFiles/Liminal.dir/src/liminal/shader.cpp.o
+.PHONY : src/liminal/shader.cpp.o
+
+src/liminal/shader.i: src/liminal/shader.cpp.i
+.PHONY : src/liminal/shader.i
+
+# target to preprocess a source file
+src/liminal/shader.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Liminal.dir/build.make CMakeFiles/Liminal.dir/src/liminal/shader.cpp.i
+.PHONY : src/liminal/shader.cpp.i
+
+src/liminal/shader.s: src/liminal/shader.cpp.s
+.PHONY : src/liminal/shader.s
+
+# target to generate assembly for a file
+src/liminal/shader.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Liminal.dir/build.make CMakeFiles/Liminal.dir/src/liminal/shader.cpp.s
+.PHONY : src/liminal/shader.cpp.s
+
+src/liminal/texture.o: src/liminal/texture.cpp.o
+.PHONY : src/liminal/texture.o
+
+# target to build an object file
+src/liminal/texture.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Liminal.dir/build.make CMakeFiles/Liminal.dir/src/liminal/texture.cpp.o
+.PHONY : src/liminal/texture.cpp.o
+
+src/liminal/texture.i: src/liminal/texture.cpp.i
+.PHONY : src/liminal/texture.i
+
+# target to preprocess a source file
+src/liminal/texture.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Liminal.dir/build.make CMakeFiles/Liminal.dir/src/liminal/texture.cpp.i
+.PHONY : src/liminal/texture.cpp.i
+
+src/liminal/texture.s: src/liminal/texture.cpp.s
+.PHONY : src/liminal/texture.s
+
+# target to generate assembly for a file
+src/liminal/texture.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Liminal.dir/build.make CMakeFiles/Liminal.dir/src/liminal/texture.cpp.s
+.PHONY : src/liminal/texture.cpp.s
+
+src/liminal/window.o: src/liminal/window.cpp.o
+.PHONY : src/liminal/window.o
+
+# target to build an object file
+src/liminal/window.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Liminal.dir/build.make CMakeFiles/Liminal.dir/src/liminal/window.cpp.o
+.PHONY : src/liminal/window.cpp.o
+
+src/liminal/window.i: src/liminal/window.cpp.i
+.PHONY : src/liminal/window.i
+
+# target to preprocess a source file
+src/liminal/window.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Liminal.dir/build.make CMakeFiles/Liminal.dir/src/liminal/window.cpp.i
+.PHONY : src/liminal/window.cpp.i
+
+src/liminal/window.s: src/liminal/window.cpp.s
+.PHONY : src/liminal/window.s
+
+# target to generate assembly for a file
+src/liminal/window.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Liminal.dir/build.make CMakeFiles/Liminal.dir/src/liminal/window.cpp.s
+.PHONY : src/liminal/window.cpp.s
 
 src/main.o: src/main.cpp.o
 .PHONY : src/main.o
 
 # target to build an object file
 src/main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/OpenGLProject.dir/build.make CMakeFiles/OpenGLProject.dir/src/main.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Liminal.dir/build.make CMakeFiles/Liminal.dir/src/main.cpp.o
 .PHONY : src/main.cpp.o
 
 src/main.i: src/main.cpp.i
@@ -166,7 +310,7 @@ src/main.i: src/main.cpp.i
 
 # target to preprocess a source file
 src/main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/OpenGLProject.dir/build.make CMakeFiles/OpenGLProject.dir/src/main.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Liminal.dir/build.make CMakeFiles/Liminal.dir/src/main.cpp.i
 .PHONY : src/main.cpp.i
 
 src/main.s: src/main.cpp.s
@@ -174,39 +318,15 @@ src/main.s: src/main.cpp.s
 
 # target to generate assembly for a file
 src/main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/OpenGLProject.dir/build.make CMakeFiles/OpenGLProject.dir/src/main.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Liminal.dir/build.make CMakeFiles/Liminal.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
-
-src/window.o: src/window.cpp.o
-.PHONY : src/window.o
-
-# target to build an object file
-src/window.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/OpenGLProject.dir/build.make CMakeFiles/OpenGLProject.dir/src/window.cpp.o
-.PHONY : src/window.cpp.o
-
-src/window.i: src/window.cpp.i
-.PHONY : src/window.i
-
-# target to preprocess a source file
-src/window.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/OpenGLProject.dir/build.make CMakeFiles/OpenGLProject.dir/src/window.cpp.i
-.PHONY : src/window.cpp.i
-
-src/window.s: src/window.cpp.s
-.PHONY : src/window.s
-
-# target to generate assembly for a file
-src/window.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/OpenGLProject.dir/build.make CMakeFiles/OpenGLProject.dir/src/window.cpp.s
-.PHONY : src/window.cpp.s
 
 third_party/imgui/backends/imgui_impl_glfw.o: third_party/imgui/backends/imgui_impl_glfw.cpp.o
 .PHONY : third_party/imgui/backends/imgui_impl_glfw.o
 
 # target to build an object file
 third_party/imgui/backends/imgui_impl_glfw.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/OpenGLProject.dir/build.make CMakeFiles/OpenGLProject.dir/third_party/imgui/backends/imgui_impl_glfw.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Liminal.dir/build.make CMakeFiles/Liminal.dir/third_party/imgui/backends/imgui_impl_glfw.cpp.o
 .PHONY : third_party/imgui/backends/imgui_impl_glfw.cpp.o
 
 third_party/imgui/backends/imgui_impl_glfw.i: third_party/imgui/backends/imgui_impl_glfw.cpp.i
@@ -214,7 +334,7 @@ third_party/imgui/backends/imgui_impl_glfw.i: third_party/imgui/backends/imgui_i
 
 # target to preprocess a source file
 third_party/imgui/backends/imgui_impl_glfw.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/OpenGLProject.dir/build.make CMakeFiles/OpenGLProject.dir/third_party/imgui/backends/imgui_impl_glfw.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Liminal.dir/build.make CMakeFiles/Liminal.dir/third_party/imgui/backends/imgui_impl_glfw.cpp.i
 .PHONY : third_party/imgui/backends/imgui_impl_glfw.cpp.i
 
 third_party/imgui/backends/imgui_impl_glfw.s: third_party/imgui/backends/imgui_impl_glfw.cpp.s
@@ -222,7 +342,7 @@ third_party/imgui/backends/imgui_impl_glfw.s: third_party/imgui/backends/imgui_i
 
 # target to generate assembly for a file
 third_party/imgui/backends/imgui_impl_glfw.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/OpenGLProject.dir/build.make CMakeFiles/OpenGLProject.dir/third_party/imgui/backends/imgui_impl_glfw.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Liminal.dir/build.make CMakeFiles/Liminal.dir/third_party/imgui/backends/imgui_impl_glfw.cpp.s
 .PHONY : third_party/imgui/backends/imgui_impl_glfw.cpp.s
 
 third_party/imgui/backends/imgui_impl_opengl3.o: third_party/imgui/backends/imgui_impl_opengl3.cpp.o
@@ -230,7 +350,7 @@ third_party/imgui/backends/imgui_impl_opengl3.o: third_party/imgui/backends/imgu
 
 # target to build an object file
 third_party/imgui/backends/imgui_impl_opengl3.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/OpenGLProject.dir/build.make CMakeFiles/OpenGLProject.dir/third_party/imgui/backends/imgui_impl_opengl3.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Liminal.dir/build.make CMakeFiles/Liminal.dir/third_party/imgui/backends/imgui_impl_opengl3.cpp.o
 .PHONY : third_party/imgui/backends/imgui_impl_opengl3.cpp.o
 
 third_party/imgui/backends/imgui_impl_opengl3.i: third_party/imgui/backends/imgui_impl_opengl3.cpp.i
@@ -238,7 +358,7 @@ third_party/imgui/backends/imgui_impl_opengl3.i: third_party/imgui/backends/imgu
 
 # target to preprocess a source file
 third_party/imgui/backends/imgui_impl_opengl3.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/OpenGLProject.dir/build.make CMakeFiles/OpenGLProject.dir/third_party/imgui/backends/imgui_impl_opengl3.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Liminal.dir/build.make CMakeFiles/Liminal.dir/third_party/imgui/backends/imgui_impl_opengl3.cpp.i
 .PHONY : third_party/imgui/backends/imgui_impl_opengl3.cpp.i
 
 third_party/imgui/backends/imgui_impl_opengl3.s: third_party/imgui/backends/imgui_impl_opengl3.cpp.s
@@ -246,7 +366,7 @@ third_party/imgui/backends/imgui_impl_opengl3.s: third_party/imgui/backends/imgu
 
 # target to generate assembly for a file
 third_party/imgui/backends/imgui_impl_opengl3.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/OpenGLProject.dir/build.make CMakeFiles/OpenGLProject.dir/third_party/imgui/backends/imgui_impl_opengl3.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Liminal.dir/build.make CMakeFiles/Liminal.dir/third_party/imgui/backends/imgui_impl_opengl3.cpp.s
 .PHONY : third_party/imgui/backends/imgui_impl_opengl3.cpp.s
 
 third_party/imgui/imgui.o: third_party/imgui/imgui.cpp.o
@@ -254,7 +374,7 @@ third_party/imgui/imgui.o: third_party/imgui/imgui.cpp.o
 
 # target to build an object file
 third_party/imgui/imgui.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/OpenGLProject.dir/build.make CMakeFiles/OpenGLProject.dir/third_party/imgui/imgui.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Liminal.dir/build.make CMakeFiles/Liminal.dir/third_party/imgui/imgui.cpp.o
 .PHONY : third_party/imgui/imgui.cpp.o
 
 third_party/imgui/imgui.i: third_party/imgui/imgui.cpp.i
@@ -262,7 +382,7 @@ third_party/imgui/imgui.i: third_party/imgui/imgui.cpp.i
 
 # target to preprocess a source file
 third_party/imgui/imgui.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/OpenGLProject.dir/build.make CMakeFiles/OpenGLProject.dir/third_party/imgui/imgui.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Liminal.dir/build.make CMakeFiles/Liminal.dir/third_party/imgui/imgui.cpp.i
 .PHONY : third_party/imgui/imgui.cpp.i
 
 third_party/imgui/imgui.s: third_party/imgui/imgui.cpp.s
@@ -270,7 +390,7 @@ third_party/imgui/imgui.s: third_party/imgui/imgui.cpp.s
 
 # target to generate assembly for a file
 third_party/imgui/imgui.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/OpenGLProject.dir/build.make CMakeFiles/OpenGLProject.dir/third_party/imgui/imgui.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Liminal.dir/build.make CMakeFiles/Liminal.dir/third_party/imgui/imgui.cpp.s
 .PHONY : third_party/imgui/imgui.cpp.s
 
 third_party/imgui/imgui_demo.o: third_party/imgui/imgui_demo.cpp.o
@@ -278,7 +398,7 @@ third_party/imgui/imgui_demo.o: third_party/imgui/imgui_demo.cpp.o
 
 # target to build an object file
 third_party/imgui/imgui_demo.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/OpenGLProject.dir/build.make CMakeFiles/OpenGLProject.dir/third_party/imgui/imgui_demo.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Liminal.dir/build.make CMakeFiles/Liminal.dir/third_party/imgui/imgui_demo.cpp.o
 .PHONY : third_party/imgui/imgui_demo.cpp.o
 
 third_party/imgui/imgui_demo.i: third_party/imgui/imgui_demo.cpp.i
@@ -286,7 +406,7 @@ third_party/imgui/imgui_demo.i: third_party/imgui/imgui_demo.cpp.i
 
 # target to preprocess a source file
 third_party/imgui/imgui_demo.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/OpenGLProject.dir/build.make CMakeFiles/OpenGLProject.dir/third_party/imgui/imgui_demo.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Liminal.dir/build.make CMakeFiles/Liminal.dir/third_party/imgui/imgui_demo.cpp.i
 .PHONY : third_party/imgui/imgui_demo.cpp.i
 
 third_party/imgui/imgui_demo.s: third_party/imgui/imgui_demo.cpp.s
@@ -294,7 +414,7 @@ third_party/imgui/imgui_demo.s: third_party/imgui/imgui_demo.cpp.s
 
 # target to generate assembly for a file
 third_party/imgui/imgui_demo.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/OpenGLProject.dir/build.make CMakeFiles/OpenGLProject.dir/third_party/imgui/imgui_demo.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Liminal.dir/build.make CMakeFiles/Liminal.dir/third_party/imgui/imgui_demo.cpp.s
 .PHONY : third_party/imgui/imgui_demo.cpp.s
 
 third_party/imgui/imgui_draw.o: third_party/imgui/imgui_draw.cpp.o
@@ -302,7 +422,7 @@ third_party/imgui/imgui_draw.o: third_party/imgui/imgui_draw.cpp.o
 
 # target to build an object file
 third_party/imgui/imgui_draw.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/OpenGLProject.dir/build.make CMakeFiles/OpenGLProject.dir/third_party/imgui/imgui_draw.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Liminal.dir/build.make CMakeFiles/Liminal.dir/third_party/imgui/imgui_draw.cpp.o
 .PHONY : third_party/imgui/imgui_draw.cpp.o
 
 third_party/imgui/imgui_draw.i: third_party/imgui/imgui_draw.cpp.i
@@ -310,7 +430,7 @@ third_party/imgui/imgui_draw.i: third_party/imgui/imgui_draw.cpp.i
 
 # target to preprocess a source file
 third_party/imgui/imgui_draw.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/OpenGLProject.dir/build.make CMakeFiles/OpenGLProject.dir/third_party/imgui/imgui_draw.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Liminal.dir/build.make CMakeFiles/Liminal.dir/third_party/imgui/imgui_draw.cpp.i
 .PHONY : third_party/imgui/imgui_draw.cpp.i
 
 third_party/imgui/imgui_draw.s: third_party/imgui/imgui_draw.cpp.s
@@ -318,7 +438,7 @@ third_party/imgui/imgui_draw.s: third_party/imgui/imgui_draw.cpp.s
 
 # target to generate assembly for a file
 third_party/imgui/imgui_draw.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/OpenGLProject.dir/build.make CMakeFiles/OpenGLProject.dir/third_party/imgui/imgui_draw.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Liminal.dir/build.make CMakeFiles/Liminal.dir/third_party/imgui/imgui_draw.cpp.s
 .PHONY : third_party/imgui/imgui_draw.cpp.s
 
 third_party/imgui/imgui_tables.o: third_party/imgui/imgui_tables.cpp.o
@@ -326,7 +446,7 @@ third_party/imgui/imgui_tables.o: third_party/imgui/imgui_tables.cpp.o
 
 # target to build an object file
 third_party/imgui/imgui_tables.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/OpenGLProject.dir/build.make CMakeFiles/OpenGLProject.dir/third_party/imgui/imgui_tables.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Liminal.dir/build.make CMakeFiles/Liminal.dir/third_party/imgui/imgui_tables.cpp.o
 .PHONY : third_party/imgui/imgui_tables.cpp.o
 
 third_party/imgui/imgui_tables.i: third_party/imgui/imgui_tables.cpp.i
@@ -334,7 +454,7 @@ third_party/imgui/imgui_tables.i: third_party/imgui/imgui_tables.cpp.i
 
 # target to preprocess a source file
 third_party/imgui/imgui_tables.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/OpenGLProject.dir/build.make CMakeFiles/OpenGLProject.dir/third_party/imgui/imgui_tables.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Liminal.dir/build.make CMakeFiles/Liminal.dir/third_party/imgui/imgui_tables.cpp.i
 .PHONY : third_party/imgui/imgui_tables.cpp.i
 
 third_party/imgui/imgui_tables.s: third_party/imgui/imgui_tables.cpp.s
@@ -342,7 +462,7 @@ third_party/imgui/imgui_tables.s: third_party/imgui/imgui_tables.cpp.s
 
 # target to generate assembly for a file
 third_party/imgui/imgui_tables.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/OpenGLProject.dir/build.make CMakeFiles/OpenGLProject.dir/third_party/imgui/imgui_tables.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Liminal.dir/build.make CMakeFiles/Liminal.dir/third_party/imgui/imgui_tables.cpp.s
 .PHONY : third_party/imgui/imgui_tables.cpp.s
 
 third_party/imgui/imgui_widgets.o: third_party/imgui/imgui_widgets.cpp.o
@@ -350,7 +470,7 @@ third_party/imgui/imgui_widgets.o: third_party/imgui/imgui_widgets.cpp.o
 
 # target to build an object file
 third_party/imgui/imgui_widgets.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/OpenGLProject.dir/build.make CMakeFiles/OpenGLProject.dir/third_party/imgui/imgui_widgets.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Liminal.dir/build.make CMakeFiles/Liminal.dir/third_party/imgui/imgui_widgets.cpp.o
 .PHONY : third_party/imgui/imgui_widgets.cpp.o
 
 third_party/imgui/imgui_widgets.i: third_party/imgui/imgui_widgets.cpp.i
@@ -358,7 +478,7 @@ third_party/imgui/imgui_widgets.i: third_party/imgui/imgui_widgets.cpp.i
 
 # target to preprocess a source file
 third_party/imgui/imgui_widgets.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/OpenGLProject.dir/build.make CMakeFiles/OpenGLProject.dir/third_party/imgui/imgui_widgets.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Liminal.dir/build.make CMakeFiles/Liminal.dir/third_party/imgui/imgui_widgets.cpp.i
 .PHONY : third_party/imgui/imgui_widgets.cpp.i
 
 third_party/imgui/imgui_widgets.s: third_party/imgui/imgui_widgets.cpp.s
@@ -366,7 +486,7 @@ third_party/imgui/imgui_widgets.s: third_party/imgui/imgui_widgets.cpp.s
 
 # target to generate assembly for a file
 third_party/imgui/imgui_widgets.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/OpenGLProject.dir/build.make CMakeFiles/OpenGLProject.dir/third_party/imgui/imgui_widgets.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Liminal.dir/build.make CMakeFiles/Liminal.dir/third_party/imgui/imgui_widgets.cpp.s
 .PHONY : third_party/imgui/imgui_widgets.cpp.s
 
 # Help Target
@@ -377,16 +497,31 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... OpenGLProject"
-	@echo "... src/imGuiSetup.o"
-	@echo "... src/imGuiSetup.i"
-	@echo "... src/imGuiSetup.s"
+	@echo "... Liminal"
+	@echo "... src/gl.o"
+	@echo "... src/gl.i"
+	@echo "... src/gl.s"
+	@echo "... src/liminal/imGuiSetup.o"
+	@echo "... src/liminal/imGuiSetup.i"
+	@echo "... src/liminal/imGuiSetup.s"
+	@echo "... src/liminal/liminal.o"
+	@echo "... src/liminal/liminal.i"
+	@echo "... src/liminal/liminal.s"
+	@echo "... src/liminal/openGLObjects.o"
+	@echo "... src/liminal/openGLObjects.i"
+	@echo "... src/liminal/openGLObjects.s"
+	@echo "... src/liminal/shader.o"
+	@echo "... src/liminal/shader.i"
+	@echo "... src/liminal/shader.s"
+	@echo "... src/liminal/texture.o"
+	@echo "... src/liminal/texture.i"
+	@echo "... src/liminal/texture.s"
+	@echo "... src/liminal/window.o"
+	@echo "... src/liminal/window.i"
+	@echo "... src/liminal/window.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
-	@echo "... src/window.o"
-	@echo "... src/window.i"
-	@echo "... src/window.s"
 	@echo "... third_party/imgui/backends/imgui_impl_glfw.o"
 	@echo "... third_party/imgui/backends/imgui_impl_glfw.i"
 	@echo "... third_party/imgui/backends/imgui_impl_glfw.s"

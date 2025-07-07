@@ -6,7 +6,8 @@
                 "${workspaceFolder}/**",
                 "${workspaceFolder}/third_party/imgui",
                 "${workspaceFolder}/third_party/imgui/backends",
-                "${workspaceFolder}/headers"
+                "${workspaceFolder}/headers",
+                "${workspaceFolder}/src"
             ],
             "defines": [],
             "compilerPath": "/usr/bin/clang",

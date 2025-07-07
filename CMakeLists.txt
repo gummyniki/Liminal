@@ -1,12 +1,13 @@
+
 cmake_minimum_required(VERSION 3.10)
-project(OpenGLProject)
+project(Liminal)
 
 set(CMAKE_CXX_STANDARD 17)
 
 # --------------------------
 # Source files
 # --------------------------
-file(GLOB_RECURSE SRC_FILES src/*.cpp)
+file(GLOB_RECURSE SRC_FILES src/*.cpp src/gl.c src/*.h)
 
 # --------------------------
 # ImGui
@@ -22,6 +23,7 @@ set(IMGUI_SOURCES
     ${IMGUI_DIR}/imgui_widgets.cpp
     ${IMGUI_BACKEND_DIR}/imgui_impl_glfw.cpp
     ${IMGUI_BACKEND_DIR}/imgui_impl_opengl3.cpp
+    
 )
 
 list(APPEND SRC_FILES ${IMGUI_SOURCES})
@@ -36,18 +38,18 @@ add_executable(${PROJECT_NAME} ${SRC_FILES})
 # --------------------------
 find_package(OpenGL REQUIRED)
 
-if(WIN32)
-    find_package(PkgConfig REQUIRED)
-    pkg_check_modules(GLFW REQUIRED glfw3)
-    pkg_check_modules(GLEW REQUIRED glew)
-elseif(APPLE)
-    find_package(PkgConfig REQUIRED)
-    pkg_check_modules(GLFW REQUIRED glfw3)
-    pkg_check_modules(GLEW REQUIRED glew)
-else()  # Assume Linux
-    find_package(PkgConfig REQUIRED)
-    pkg_check_modules(GLFW REQUIRED glfw3)
-    pkg_check_modules(GLEW REQUIRED glew)
+if(WIN32 OR APPLE)
+  find_package(PkgConfig REQUIRED)
+  pkg_check_modules(GLFW REQUIRED glfw3)
+  find_package(assimp REQUIRED)
+else()  # Linux
+  find_package(PkgConfig REQUIRED)
+  pkg_check_modules(GLFW REQUIRED glfw3)
+
+  find_package(assimp REQUIRED)
+
+
+
 endif()
 
 # --------------------------
@@ -55,7 +57,6 @@ endif()
 # --------------------------
 target_include_directories(${PROJECT_NAME} PRIVATE
     ${GLFW_INCLUDE_DIRS}
-    ${GLEW_INCLUDE_DIRS}
     ${IMGUI_DIR}
     ${IMGUI_BACKEND_DIR}
     ${CMAKE_SOURCE_DIR}/headers
@@ -66,11 +67,12 @@ target_include_directories(${PROJECT_NAME} PRIVATE
 # --------------------------
 target_link_libraries(${PROJECT_NAME}
     ${GLFW_LIBRARIES}
-    ${GLEW_LIBRARIES}
     OpenGL::GL
+    assimp::assimp
 )
 
 if(UNIX AND NOT APPLE)
-    # Linux-specific libraries
-    target_link_libraries(${PROJECT_NAME} dl pthread X11)
+  target_link_libraries(${PROJECT_NAME} dl pthread X11)
+  
 endif()
+
