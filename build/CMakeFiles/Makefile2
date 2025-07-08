@@ -85,12 +85,12 @@ clean: CMakeFiles/Liminal.dir/clean
 CMakeFiles/Liminal.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Liminal.dir/build.make CMakeFiles/Liminal.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Liminal.dir/build.make CMakeFiles/Liminal.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/gummy/projects/Liminal/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17 "Built target Liminal"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/gummy/projects/Liminal/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19 "Built target Liminal"
 .PHONY : CMakeFiles/Liminal.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/Liminal.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/gummy/projects/Liminal/build/CMakeFiles 17
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/gummy/projects/Liminal/build/CMakeFiles 19
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/Liminal.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/gummy/projects/Liminal/build/CMakeFiles 0
 .PHONY : CMakeFiles/Liminal.dir/rule
@@ -102,7 +102,7 @@ Liminal: CMakeFiles/Liminal.dir/rule
 # codegen rule for target.
 CMakeFiles/Liminal.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Liminal.dir/build.make CMakeFiles/Liminal.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/gummy/projects/Liminal/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17 "Finished codegen for target Liminal"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/gummy/projects/Liminal/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19 "Finished codegen for target Liminal"
 .PHONY : CMakeFiles/Liminal.dir/codegen
 
 # clean rule for target.

@@ -24,9 +24,11 @@ namespace liminal {
     extern float lastFrame;
     extern float lastX;
     extern float lastY;
+    extern int LIMINAL_MAX_LIGHTS;
     extern bool firstMouse;
     extern Camera camera;
     extern GLuint lightVAO;
+    extern GLuint VAO;
     struct PointLight {
         glm::vec3 position;
         glm::vec3 color;
@@ -34,6 +36,8 @@ namespace liminal {
         float constant = 1.0f;
         float linear = 0.09f;
         float quadratic = 0.032f;
+
+        bool debug = false;
     };
 
 
@@ -53,7 +57,7 @@ namespace liminal {
     void cleanup();
     void initVAO();
     void setup3D();
-    void prepRendering(GLuint shaderProgram, GLuint VAO);
+    void prepRendering(GLuint VAO);
     void postRendering();
     void setupShaders();
     void framebuffer_size_callback(GLFWwindow* window, int width, int height);
@@ -68,4 +72,8 @@ namespace liminal {
     void render_postProcessingQuad();
     void render_postProcessing();
     void blitFrameBuffer();
+
+
+    bool isKeyPressed(int key);
+    bool windowShouldClose();
 }

@@ -23,23 +23,26 @@ Camera mainCamera(glm::vec3(0.0f, 0.0f, 3.0f));
 
 int main() {
   liminal::init();
+  liminal::LIMINAL_MAX_LIGHTS = 30;
   liminal::camera = mainCamera;
   liminal::camera.Zoom = 90.0f;
   
   liminal::camera.MouseSensitivity = 0.2f;
   
   liminal::setupShaders();
-  GLuint VAO = OpenGLObjects::createVAO(cube::vertices, sizeof(cube::vertices));
 
-  
+  GLint maxUniforms;
+    glGetIntegerv(GL_MAX_FRAGMENT_UNIFORM_COMPONENTS, &maxUniforms);
+    std::cout << "Max Fragment Uniforms: " << maxUniforms << "\n";
+
 
 
   liminal::PointLight pointLight1;
   pointLight1.position = glm::vec3(1.2f, 1.0f, 2.0f);
   pointLight1.color = glm::vec3(1.0f, 1.0f, 1.0f);
-  pointLight1.constant = 1.0f;
-  pointLight1.linear = 0.09f;
-  pointLight1.quadratic = 0.032f;
+  pointLight1.constant = 10.0f;
+  pointLight1.linear = 0.9f;
+  pointLight1.quadratic = 0.32f;
 
 
   liminal::PointLight pointLight2;
@@ -48,11 +51,25 @@ int main() {
   pointLight2.constant = 1.0f;
   pointLight2.linear = 0.09f;
   pointLight2.quadratic = 0.032f;
+
+  std::vector<liminal::PointLight> pointLightsG;
+
+  for (int i = 1; i < liminal::LIMINAL_MAX_LIGHTS; i++) {
+    liminal::PointLight pointLight;
+    pointLight.position = glm::vec3(i * 0.5f, i * 0.5f, i * 0.5f);
+    pointLight.color = glm::vec3(std::clamp(0.1f * i + 0.1f, 0.0f, 1.0f), std::clamp(0.1f * i + 0.1f, 0.0f, 1.0f), 1.0f);
+    pointLight.constant = 1.0f;
+    pointLight.linear = 0.09f;
+    pointLight.quadratic = 0.032f;
+    pointLightsG.push_back(pointLight);
+    }
+
+
  
   liminal::pointLights.push_back(pointLight1);
   liminal::pointLights.push_back(pointLight2);
 
-  std::vector<liminal::PointLight> pointLightsG;
+  
   pointLightsG.push_back(pointLight1);
   pointLightsG.push_back(pointLight2);
 
@@ -61,7 +78,9 @@ int main() {
 
   cube::Cube cube;
   cube.position = glm::vec3(-0.5f, -0.5f, -0.5f);
-  cube.useColor = false;
+  cube.color = glm::vec3(1.0f, 0.0f, 0.0f);
+  cube.useColor = true;
+  
 
   liminal::setup_postProcessing();
   liminal::render_postProcessingQuad();
@@ -93,10 +112,12 @@ int main() {
   imguiSetup::setup(liminal::gameWindow);
 
 
-  while (!glfwWindowShouldClose(liminal::gameWindow)) {
+
+  while (!liminal::windowShouldClose()) {
     glBindFramebuffer(GL_FRAMEBUFFER, liminal::framebuffer);
     glEnable(GL_DEPTH_TEST);
     liminal::setup3D();
+    
 
     liminal::processInput(liminal::gameWindow);
 
@@ -106,13 +127,14 @@ int main() {
     imguiSetup::start("Hello, ImGui!");
     ImGui::Checkbox("postprocessing", &liminal::postProcessingEnabled);
     ImGui::Text("This is an example window!");
+    ImGui::Text("Application average %.3f ms/frame (%.1f FPS)", 1000.0f / ImGui::GetIO().Framerate, ImGui::GetIO().Framerate);
     if (ImGui::Button("Close")) {
         glfwSetWindowShouldClose(liminal::gameWindow, GLFW_TRUE);
     }
 
     chromaticAberrationEffect.updateEffect();
 
-    if (glfwGetKey(liminal::gameWindow, GLFW_KEY_C) == GLFW_PRESS) {
+    if (liminal::isKeyPressed(GLFW_KEY_C)) {
         
         chromaticAberrationEffect.applyEffect();
         std::cout << "Applying Chromatic Aberration Effect" << std::endl;
@@ -120,18 +142,23 @@ int main() {
 
     ImGui::End();
 
-    liminal::prepRendering(liminal::shaderProgram, VAO);
+    liminal::prepRendering(liminal::VAO);
     liminal::setupLights();
 
-    // Update and draw objects
-    cube.rotation.x = glm::radians(45.0f) * (float)glfwGetTime();
-    cube.updateModelMatrix();
-    cube.draw(liminal::shaderProgram);
+     
+
+
 
     ourModel.rotation.y = glm::radians(800.0f) * (float)glfwGetTime();
-    ourModel.Draw(liminal::shaderProgram);
+    ourModel.Draw();
 
-    model2.Draw(liminal::shaderProgram);
+   
+
+    
+
+
+    model2.Draw();
+
 
     glBindFramebuffer(GL_FRAMEBUFFER, 0);
     glDisable(GL_DEPTH_TEST); 

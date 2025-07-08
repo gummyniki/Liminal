@@ -1,6 +1,9 @@
 #include "liminal.h"
 #include "shader.h"
 #include "camera.h"
+#include "model.h"
+#include "openGLObjects.h"
+#include "cube.h"
 
 namespace liminal {
 int SCREEN_WIDTH = 800;
@@ -10,10 +13,12 @@ glm::mat4 projection;
 glm::mat4 view;
 GLuint shaderProgram;
 GLuint lightVAO;
+GLuint VAO;
 float deltaTime = 0.0f;
 float lastFrame = 0.0f;
 float lastX = SCREEN_WIDTH / 2.0f;
 float lastY = SCREEN_HEIGHT / 2.0f;
+int LIMINAL_MAX_LIGHTS = 200;
 bool firstMouse = true;
 Camera camera;
 bool postProcessingEnabled = false;
@@ -156,10 +161,12 @@ void setupShaders() {
     delete[] vertexShaderSource;
     delete[] fragmentShaderSource;
     shaderProgram = shader::createShaderProgram(vs, fs);
+
+    VAO = OpenGLObjects::createVAO(cube::vertices, sizeof(cube::vertices));
 }
 
 void createPointLights(std::vector<PointLight> &lights) {
-    if (lights.size() < 8) {
+    if (lights.size() < LIMINAL_MAX_LIGHTS) {
         for (const auto &light : lights) {
             pointLights.push_back(light);
         }
@@ -176,7 +183,17 @@ void setupLights() {
         glUniform1f(glGetUniformLocation(shaderProgram, ("pointLights[" + index + "].constant").c_str()), pointLights[i].constant);
         glUniform1f(glGetUniformLocation(shaderProgram, ("pointLights[" + index + "].linear").c_str()), pointLights[i].linear);
         glUniform1f(glGetUniformLocation(shaderProgram, ("pointLights[" + index + "].quadratic").c_str()), pointLights[i].quadratic);
+
+        if (pointLights[i].debug) {
+            Model lightmodel("lightbulb/lightbulb.obj", true, false);
+            lightmodel.position = pointLights[i].position;
+            lightmodel.scale = glm::vec3(1.0f);
+            lightmodel.rotation = glm::vec3(0.0f);
+            lightmodel.Draw();
+        }
     }
+
+    
 }
 
 
@@ -292,7 +309,7 @@ void setup3D() {
 }
 
 
-void prepRendering(GLuint shaderProgram, GLuint VAO) {
+void prepRendering(GLuint VAO) {
     glUseProgram(shaderProgram);
     int modelLoc = glGetUniformLocation(shaderProgram, "model");
     int viewLoc = glGetUniformLocation(shaderProgram, "view");
@@ -313,6 +330,13 @@ void postRendering() {
     glfwSwapBuffers(gameWindow);
 }
 
+bool isKeyPressed(int key) {
+    return glfwGetKey(gameWindow, key) == GLFW_PRESS;
+}
+
+bool windowShouldClose() {
+    return glfwWindowShouldClose(gameWindow);
+}
 
 
 }

@@ -153,6 +153,30 @@ src/gl.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Liminal.dir/build.make CMakeFiles/Liminal.dir/src/gl.c.s
 .PHONY : src/gl.c.s
 
+src/liminal/cube.o: src/liminal/cube.cpp.o
+.PHONY : src/liminal/cube.o
+
+# target to build an object file
+src/liminal/cube.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Liminal.dir/build.make CMakeFiles/Liminal.dir/src/liminal/cube.cpp.o
+.PHONY : src/liminal/cube.cpp.o
+
+src/liminal/cube.i: src/liminal/cube.cpp.i
+.PHONY : src/liminal/cube.i
+
+# target to preprocess a source file
+src/liminal/cube.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Liminal.dir/build.make CMakeFiles/Liminal.dir/src/liminal/cube.cpp.i
+.PHONY : src/liminal/cube.cpp.i
+
+src/liminal/cube.s: src/liminal/cube.cpp.s
+.PHONY : src/liminal/cube.s
+
+# target to generate assembly for a file
+src/liminal/cube.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Liminal.dir/build.make CMakeFiles/Liminal.dir/src/liminal/cube.cpp.s
+.PHONY : src/liminal/cube.cpp.s
+
 src/liminal/imGuiSetup.o: src/liminal/imGuiSetup.cpp.o
 .PHONY : src/liminal/imGuiSetup.o
 
@@ -200,6 +224,30 @@ src/liminal/liminal.s: src/liminal/liminal.cpp.s
 src/liminal/liminal.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Liminal.dir/build.make CMakeFiles/Liminal.dir/src/liminal/liminal.cpp.s
 .PHONY : src/liminal/liminal.cpp.s
+
+src/liminal/model.o: src/liminal/model.cpp.o
+.PHONY : src/liminal/model.o
+
+# target to build an object file
+src/liminal/model.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Liminal.dir/build.make CMakeFiles/Liminal.dir/src/liminal/model.cpp.o
+.PHONY : src/liminal/model.cpp.o
+
+src/liminal/model.i: src/liminal/model.cpp.i
+.PHONY : src/liminal/model.i
+
+# target to preprocess a source file
+src/liminal/model.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Liminal.dir/build.make CMakeFiles/Liminal.dir/src/liminal/model.cpp.i
+.PHONY : src/liminal/model.cpp.i
+
+src/liminal/model.s: src/liminal/model.cpp.s
+.PHONY : src/liminal/model.s
+
+# target to generate assembly for a file
+src/liminal/model.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Liminal.dir/build.make CMakeFiles/Liminal.dir/src/liminal/model.cpp.s
+.PHONY : src/liminal/model.cpp.s
 
 src/liminal/openGLObjects.o: src/liminal/openGLObjects.cpp.o
 .PHONY : src/liminal/openGLObjects.o
@@ -525,12 +573,18 @@ help:
 	@echo "... src/gl.o"
 	@echo "... src/gl.i"
 	@echo "... src/gl.s"
+	@echo "... src/liminal/cube.o"
+	@echo "... src/liminal/cube.i"
+	@echo "... src/liminal/cube.s"
 	@echo "... src/liminal/imGuiSetup.o"
 	@echo "... src/liminal/imGuiSetup.i"
 	@echo "... src/liminal/imGuiSetup.s"
 	@echo "... src/liminal/liminal.o"
 	@echo "... src/liminal/liminal.i"
 	@echo "... src/liminal/liminal.s"
+	@echo "... src/liminal/model.o"
+	@echo "... src/liminal/model.i"
+	@echo "... src/liminal/model.s"
 	@echo "... src/liminal/openGLObjects.o"
 	@echo "... src/liminal/openGLObjects.i"
 	@echo "... src/liminal/openGLObjects.s"
